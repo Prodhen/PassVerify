@@ -104,24 +104,24 @@ public class PasswordService:IPasswordService
 
     public string GetStrengthFeedback(string password)
     {
-   var feedback = new List<string>();
+        var feedback = new List<string>();
 
-    if (password.Length < 8)
-        feedback.Add("at least 8 characters");
-    if (!password.Any(char.IsUpper))
-        feedback.Add("an uppercase letter");
-    if (!password.Any(char.IsLower))
-        feedback.Add("a lowercase letter");
-    if (!password.Any(char.IsDigit))
-        feedback.Add("a number");
-    if (!password.Any(ch => "!@#$%^&*()_+-=[]{}|;:,.<>?".Contains(ch)))
-        feedback.Add("a special character");
+        if (password.Length < 8)
+            feedback.Add("at least 8 characters");
+        if (!password.Any(char.IsUpper))
+            feedback.Add("an uppercase letter");
+        if (!password.Any(char.IsLower))
+            feedback.Add("a lowercase letter");
+        if (!password.Any(char.IsDigit))
+            feedback.Add("a number");
+        if (!password.Any(ch => "!@#$%^&*()_+-=[]{}|;:,.<>?".Contains(ch)))
+            feedback.Add("a special character");
 
-    if (feedback.Count == 0)
-        return "Your password is strong.";
+        if (feedback.Count == 0)
+            return "Your password is strong.";
 
-    return "Your password is weak. Please include " + string.Join(", ", feedback) + ".";
-    }
+        return "Your password is weak. Please include " + string.Join(", ", feedback) + ".";
+        }
 
 
   

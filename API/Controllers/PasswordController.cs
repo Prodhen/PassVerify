@@ -36,25 +36,7 @@ public async Task<ActionResult<PasswordResponseModel>> VerifyPassword([FromBody]
     return Ok(response);
 }
 
-    // This could be expanded with more logic for strength checks and compromised checks
-    private bool CheckPasswordStrength(string password)
-    {
-        // Implement your strength check logic (e.g., minimum length, complexity, etc.)
-        return password.Length >= 8; // Sample simple check
-    }
-
-    private bool CheckIfCompromised(string password)
-    {
-        // Simulate checking the password against a compromised list or API
-        // (You could integrate with a service like "Have I Been Pwned")
-        return false; // Simulated check
-    }
-
-    private string GetPasswordStrengthFeedback(string password)
-    {
-        // Provide feedback based on strength check
-        if (password.Length < 8) return "Password is too short.";
-        return "Password is strong.";
-    }
+ 
+   
 }
 }

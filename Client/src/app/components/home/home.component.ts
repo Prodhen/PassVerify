@@ -1,5 +1,4 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { RegisterComponent } from "../../register/register.component";
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -7,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
   standalone: true,
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
-  imports: [RegisterComponent]
+
 })
 export class HomeComponent implements OnInit {
   http = inject(HttpClient);
